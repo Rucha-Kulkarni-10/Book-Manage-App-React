@@ -2,6 +2,8 @@ import BookList from './components/BookList';
 import mockDt from './utils/mockDt';
 import "./components/style.css";
 import { useState } from 'react';
+import Header from './components/Header';
+import { Outlet } from 'react-router-dom';
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
 
   return (
     <>
+      <Header />
+
        <div className='Search'>
           <h2>Search Books</h2>
           <div>
@@ -29,9 +33,12 @@ function App() {
           </div>
        </div>
 
-       <BookList booksData={filterBook} />
+      {/* <BookList booksData={filterBook} /> */}
+
+      <Outlet />
     </>
   );
 }
 
 export default App;
+
